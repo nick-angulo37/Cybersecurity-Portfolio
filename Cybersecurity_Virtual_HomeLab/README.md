@@ -89,4 +89,47 @@ Tasks:
 - Vulnerability assessment 
 </details>
 
-**Challenges Encountered**
+## Challenges Encountered
+
+### Apache Connectivity
+<details>
+<summary>Apache Connectivity</summary>
+
+Issue: Apache server was unreachable from Kali Linux.
+
+Troubleshooting prcoess:
+- Verified Apache service status
+- Tested ICMP connectivity
+- Reviewed firewall configuration
+- Opened TCP port 80 using UFW
+- Confirmed successful HTTP communciation
+
+Final Soltuion: Updated the Ubunutu firewall configuration and verified network connectivity
+</details>
+
+### SSH Access
+<details>
+ <summary>SSH Access</summary>
+Issue: Remote SSh sessions initially were unsuccessful
+
+Resolution: Confirmed the SSH service was running, validated firewall rules, and tested the connectivity until successful remote administration was established. 
+</details>
+
+## Skills Demonstrated From Project
+
+- Windows Server Administration
+- Active Directory
+- DNS
+- DHCP
+- Linux Administration
+- Apache Web Server
+- SSH
+- Virtualization
+- Network Troubleshooting
+- Vulnerability Management
+- Security Assessment
+- Documentation
+
+## Future Implementations 
+
+## Lessons Learned From Project 
