@@ -26,6 +26,9 @@ This project helps demostrate the design and implementation of a virtual cyberse
 ## Implementation
 
 ### Active Directory
+
+<details>
+ <summary>Active Directory Configuration</summary>
 Used Windows Server 2022 to configure a domain controller and promoted the server to manage authentication and centralizaed administration.
 
 Tasks:
@@ -34,8 +37,11 @@ Tasks:
 - Creating user accounts
 - Configuring security groups
 - Joining Windows clients to the domain
-
+</details> 
+ 
 ### DNS
+<details>
+ <summary>DNS Configuration</summary>
 Configured DNS to provide internal name resoltuion for all virtual machines. 
 
 Tasks:
@@ -43,8 +49,12 @@ Tasks:
 - Reverse lookup zones
 - DNS verification
 - Client testing
+</details>
+
 
 ### DHCP
+<details>
+ <summary>DHCP Configuration</summary>
 Configured DHCP to automatically assign IP addresses to clients.
 
 Tasks:
@@ -52,8 +62,11 @@ Tasks:
 - Reservations
 - Lease Verification
 - Client testing
+</details>
 
 ### Ubuntu Web Server
+<details>
+ <summary>Ubuntu Web Server Configuration</summary>
 Installed Ubuntu Server and configured Apache to host a web page.
 
 Tasks:
@@ -62,8 +75,11 @@ Tasks:
 - Firewall configuration
 - SSH configuration
 - Remote administration
+</details>
 
 ### Kali Linux
+<details>
+ <summary>Kali Linux Configuration</summary>
 Used Kali Linux as the security workstation that remote connects to the Ubuntu Server 
 
 Tasks:
@@ -71,5 +87,6 @@ Tasks:
 - Service enumeration
 - Connectivity testing
 - Vulnerability assessment 
+</details>
 
 **Challenges Encountered**
