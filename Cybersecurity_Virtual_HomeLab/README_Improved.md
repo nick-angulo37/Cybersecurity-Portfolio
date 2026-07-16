@@ -10,17 +10,10 @@ This project was completed to develop practical, hands-on experience administeri
 This repository documents two independent virtual lab environments built
 in Oracle VirtualBox.
 
-  -------------------------------------------------------------------------
-  Environment             Purpose          Core Technologies
-  ----------------------- ---------------- --------------------------------
-  Enterprise Windows Lab  Windows          Windows Server 2022, Windows 11,
-                          enterprise       Active Directory, DNS, DHCP
-                          administration   
-
-  Linux Administration    Linux            Ubuntu Server, Apache2, SSH,
-  Lab                     administration & Kali Linux
-                          security testing 
-  -------------------------------------------------------------------------
+| Environment | Purpose | Core Technologies |
+|------------|---------|-------------------|
+| Enterprise Windows Lab | Windows enterprise administration | Windows Server 2022, Windows 11, Active Directory, DNS, DHCP |
+| Linux Administration Lab | Linux administration & security testing | Ubuntu Server, Apache2, SSH, Kali Linux |
 
 ### Key Accomplishments
 
@@ -36,13 +29,13 @@ in Oracle VirtualBox.
 
 # Overview
 
-This project documents the development of two independent virtual lab environments built using Oracle VirtualBox to strengthen practical skills in enterprise Windows administration and Linux system administration.
+This project covers the creation of two independent virtual lab environments built using Oracle VirtualBox to strengthen practical skills in enterprise Windows administration and Linux system administration.
 
-The first environment focuses on core Microsoft enterprise technologies by configuring a Windows Server 2022 Domain Controller and a Windows 11 domain client. Through this environment, I gained hands-on experience deploying Active Directory Domain Services (AD DS), configuring DNS and DHCP, creating and managing domain user accounts, creating Organizational Units (OUs), and implementing security groups. 
+The initial environment focuses on core Microsoft enterprise technologies, including a Windows Server 2022 Domain Controller and a Windows 11 domain client. Through this environment, I gained practical experience deploying Active Directory Domain Services (AD DS), configuring DNS and DHCP, creating and managing domain user accounts, creating Organizational Units (OUs), and implementing security groups. 
 
-The second environment focuses on Linux administration and cybersecurity practices. An Ubuntu Server was configured to host an Apache2 web server, enable remote administration using SSH, and support network validation from a Kali Linux workstation. This environment provided experience in managing Linux services, troubleshooting connectivity issues, and performing basic network reconnaissance. 
+The second environment focuses on Linux administration and cybersecurity techniques. An Ubuntu Server was configured to host an Apache2 web server, allow remote administration using SSH, and handle network validation from a Kali Linux workstation. This environment gave hands-on experience in Linux service management, troubleshooting connectivity issues, and performing basic network reconnaissance. 
 
-Although the two environments were developed independently, together they strengthened my understanding of administering both Linux and Windows systems while reinforcing structured methodologies, enterprise networking concepts, and technical documentation.
+Although the two environments were created independently, together they strengthened my understanding of administering both Linux and Windows systems while reinforcing structured procedures, enterprise networking principles, and technical documentation.
 
 
 # Lab Architecture
@@ -74,8 +67,7 @@ Virtual Machines:
 - Ubuntu Server 
 - Kali Linux 
 
-Screenshot: 
-(INSERT SCREENSHOT HERE)
+![Linux Administration Lab](images/architecture/linux-lab.png)
 
 
 # Objectives
@@ -126,15 +118,15 @@ Screenshot:
 
 # Enterprise Windows Lab
 
-> **Goal:** Build and administer a Windows enterprise environment using Microsoft's core infrastructure services.
+> **Initial Goal:** Build and administer a Windows enterprise environment using Microsoft's core infrastructure services.
 
 ## Environment Overview
 
 The Enterprise Windows Lab was designed to simulate a small business environment using Windows Server 2022 and Windows 11. The primary objective of this virtual environment was to gain practical experience administering a Windows domain and becoming familiar with core Microsoft enterprise technologies.
 
-Through this lab, I configured Active Directory Domain Services (AD DS), DHCP, DNS, Organizational Units (OUs), domain user accounts, and security groups before validating communication between the Domain Controller and the Windows 11 client. 
+Through this lab, I configured Active Directory Domain Services (AD DS), DHCP, DNS, Organizational Units (OUs), domain user accounts, and security groups before verifying communication between the Domain Controller and the Windows 11 client. 
 
-This environment provided hands-on experience with centralized authentication, user administration, and network services commonly found in enterprise Windows environments. 
+This environment provided hands-on experience with centralized authentication, user administration, and network services that are commonly found in enterprise Windows environments. 
 ## Domain Controller
 
 The first step in building the Windows environment was promoting the Windows Server to a Domain Controller and installing Active Directory Domain Services (AD DS).
@@ -156,7 +148,7 @@ A Domain Controller provides centralized authentication and authorization servic
 
 To simulate a small enterprise environment, Organizational Units (OUs) were created to logically organize users by department. 
 
-Organizational Units simplify administration by allowing users, computers, and other directory objects to be grouped according to their role within an organization. This structure also provides the foundation for applying Group Policy Objects (GPOs) and delegating administrative responsibilities as the environment grows.
+Organizational Units simplify administration by allowing users, computers, and other directory objects to be grouped according to their role within an organization. This structure also provides the foundation for applying Group Policy Objects (GPOs) and delegating administrative responsibilities as the environment grows, something that is planned for future improvements on this project.
 
 ### Organizational Units Created:
 
@@ -171,7 +163,7 @@ Organizational Units simplify administration by allowing users, computers, and o
 
  ## Domain User Accounts 
 
- After creating the Organizational Units (OUs), user accounts were created for each department to simulate employees within a small enterprise environment. Creating multiple departmental accounts provided practical experience with user management, account organization, and Active Directory administration. 
+ After creating the Organizational Units (OUs), user accounts were created for each department to simulate employees within a small enterprise environment. Creating multiple departmental accounts provided practical experience with user management, account organization, and Active Directory administration. **Note:** names of users are randomly generated.
 
 ### Information Technology
 
@@ -199,7 +191,7 @@ Organizational Units simplify administration by allowing users, computers, and o
 
 ## Security Groups
 
-Security Groups were created to demonstrate role-based administration within Active Directory.Rather than assigning permissions directly to individual users, Security Groups allowed for permissions to be managed centrally by grouping users according to their responsibilities. This approach follows enterprise best practices by simplifying administration and improving scalability. 
+Security Groups were created to demonstrate role-based administration within Active Directory.Rather than assigning permissions directly to individual users, Security Groups allowed for permissions to be managed centrally by grouping users according to their responsibilities. This approach follows enterprise best practices as it helps in simplifying administration and improving scalability. 
 
 ### Tasks Completed:
 
@@ -213,7 +205,7 @@ Security Groups were created to demonstrate role-based administration within Act
 
 ## DNS
 
-Active Directory depends heavily on DNS to locate domain resources and authenticate users. As part of this lab, DNS was configured to provide reliable name resolution throughout the Windows environment.
+Active Directory depends heavily on DNS to locate domain resources and authenticate users.Part of this lab was to configure DNS in order to provide reliable name resolution throughout the Windows environment.
 
 ### Tasks Completed:
 
@@ -238,15 +230,11 @@ DHCP was configured to automatically assign IP addresses and network configurati
 
 *Configured DHCP Scope.*
 
-![DHCP Configuration](images/networking/dhcp-details.png)
-
-*DHCP scope configuration showing address leases and network options.*
-
 ## Windows Client Verification
 
 After configuring Active Directory, DNS, and DHCP, the Windows 11 workstation was validated to ensure successful communication with the Domain Controller. The client successfully obtained network configuration information and communicated with the server, confirming that the core Windows infrastructure services were functioning correctly. 
 
-### Validations Performed:
+### Verifications Performed:
 
 - Verified IP configuration 
 - Confirmed DNS server assignment 
@@ -268,11 +256,11 @@ After configuring Active Directory, DNS, and DHCP, the Windows 11 workstation wa
 
 The Linux Administration Lab was developed independently from the Windows environment to strengthen practical Linux administration skills and gain hands-on experience managing common server services. This environment consisted of an Ubuntu Server that served as a primary web server and a Kali Linux workstation used for administration, connectivity testing, and basic network reconnaissance. 
 
-Throughout this lab, I installed and configured Apache2, enabled SSH for remote administration, validated network connectivity, and used Kali Linux to interact with and assess the Ubuntu Server. This environment provided practical experience administering Linux systems while reinforcing networking fundamentals, service management, and troubleshooting methodologies commonly used by system administrators and cybersecurity professionals. 
+Throughout this lab, I successfully installed and configured Apache2, enabled SSH for remote administration, validated network connectivity, and used Kali Linux to access and interact with the Ubuntu Server. This environment provided practical experience administering Linux systems while reinforcing networking fundamentals, service management, and troubleshooting methodologies commonly used by system administrators and cybersecurity professionals. 
 
 ## Ubuntu Server
 
-Ubuntu Server served as the primary Linux server within the lab environment. The server was configured to host an Apache2 web server while also supporting secure remote administration through SSH. Throughout the project, Ubuntu was used to practice Linux system administration, service management, firewall configuration, and network troubleshooting.
+Ubuntu Server served as the primary Linux server for this lab environment. The server was configured to host an Apache2 web server while also supporting secure remote administration through SSH. Throughout the project, Ubuntu was used to practice Linux system administration, service management, firewall configuration, and network troubleshooting.
 
 ### Tasks Completed:
 
@@ -289,7 +277,7 @@ Ubuntu Server served as the primary Linux server within the lab environment. The
 
 ## Apache2 Web Server
 
-Apache2 was installed to provide a simple web service that could be accessed from another virtual machine within the environment. Deploying a web server provided practical experience managing Linux services while creating a target for connectivity testing and network validation. 
+Apache2 was installed to provide a simple web service that could be accessed from another virtual machine within the environment. Deploying a web server provided practical experience managing Linux services while creating a target for connectivity testing and network validation. This was one of the sections that brought that most issues through the process which I will go more into detail in another section. 
 
 ### Tasks Completed:
 - Installed Apache2
@@ -333,7 +321,7 @@ After configuring the Ubuntu Server, connectivity testing was performed in order
 
 ## Kali Linux
 
-Kali Linux served as the administrative and testing workstation throughout this environment. After the Ubuntu Server had been fully configured, Kali Linux was used to validate network connectivity, remotely administer the server using SSH, and perform basic network reconnaissance. Using Kali Linux in this lab reinforced fundamental networking concepts while providing practical experience interacting with Linux systems from a security-focused operating system. 
+Kali Linux served as the administrative and testing workstation throughout this environment. After the Ubuntu Server had been fully configured, Kali Linux was used to validate network connectivity, remotely administer the server using SSH, and perform basic network reconnaissance. Using Kali Linux in this lab reinforced fundamental networking concepts while providing practical experience interacting with Linux systems from a security-focused operating system. Kali Linux will also serve as the primary workstation that will be used for future cybersecurity projects.
 
 ### Tasks Completed:
 
@@ -344,7 +332,7 @@ Kali Linux served as the administrative and testing workstation throughout this 
 
 # Troubleshooting & Validation 
 
-Throughout both lab environments, I encountered configuration challenges while also performing validation tests to confirm that services were functioning properly. Rather than relying on the trial and error, I followed a troubleshooting methodology by verifying system configuration, testing network connectivity, validating running services, and isolating potential causes before properly implementing a solution. The following case studies summarizes a few examples of the process. 
+Throughout both lab environments, I encountered many configuration challenges while also performing validation tests to confirm that services were functioning properly. Rather than relying on the trial and error, I followed a troubleshooting procedures by verifying system configuration, testing network connectivity, validating running services, and isolating potential causes before properly implementing a solution. The following case studies summarizes a few examples of the process. 
 
 ## Case Study 1 - Apache Web Server Connectivity 
 
@@ -366,7 +354,7 @@ To  identify the root cause of this connectivity issue, I performed the followin
 
 ### Resolution 
 
-After allowing the HTTP traffic through the Ubuntu firewall and confirming that the Apache service was active, the default Apache webpage became accessible from the Kali Linux workstation.
+After allowing the HTTP traffic through the Ubuntu firewall and confirming that the Apache service was active by using the command in step 2, the default Apache webpage became accessible from the Kali Linux workstation.
 
 ## Key Takeaway
 
@@ -401,7 +389,7 @@ This issue demonstrates the importance of validating services and connectivity b
 
 ### Objective 
 
-After successfully configuring Active Directory Domain Services, DNS, and DHCP, I needed to verify that the Windows 11 client could communicate successfully with the Domain Controller. 
+This case study does not revolve around an issue that was encountered throughout the project but rather a step for verification. After successfully configuring Active Directory Domain Services, DNS, and DHCP, I needed to verify that the Windows 11 client could communicate successfully with the Domain Controller. 
 
 ### Validation Process
 
