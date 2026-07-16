@@ -10,17 +10,10 @@ This project was completed to develop practical, hands-on experience administeri
 This repository documents two independent virtual lab environments built
 in Oracle VirtualBox.
 
-  -------------------------------------------------------------------------
-  Environment             Purpose          Core Technologies
-  ----------------------- ---------------- --------------------------------
-  Enterprise Windows Lab  Windows          Windows Server 2022, Windows 11,
-                          enterprise       Active Directory, DNS, DHCP
-                          administration   
-
-  Linux Administration    Linux            Ubuntu Server, Apache2, SSH,
-  Lab                     administration & Kali Linux
-                          security testing 
-  -------------------------------------------------------------------------
+| Environment | Purpose | Core Technologies |
+|------------|---------|-------------------|
+| Enterprise Windows Lab | Windows enterprise administration | Windows Server 2022, Windows 11, Active Directory, DNS, DHCP |
+| Linux Administration Lab | Linux administration & security testing | Ubuntu Server, Apache2, SSH, Kali Linux |
 
 ### Key Accomplishments
 
