@@ -42,7 +42,7 @@ Although the two environments were created independently, together they strength
 
 ## Enterprise Windows Lab
 
-### Purpose
+### Purpose:
 
 Develop practical experience administering a Windows enterprise environment through AD-DS, DHCP, DNS, user management, and Windows networking. 
 
@@ -58,7 +58,7 @@ Virtual Machines:
 
 ## Linux Administration Lab
 
-Purpose:
+### Purpose:
 
 Develop Linux administration skills through server deployment, web server configuration, remote administration, and network validation. 
 
@@ -115,6 +115,9 @@ Virtual Machines:
 
 -   Kali Linux
 -   Nmap
+
+<details open>
+<summary><strong>Enterprise Windows Lab</strong></summary>
 
 # Enterprise Windows Lab
 
@@ -248,7 +251,10 @@ After configuring Active Directory, DNS, and DHCP, the Windows 11 workstation wa
 ![Ping Test](images/networking/ping-test.png)
 
 *Successful communication between the Windows client and the Domain Controller.*
+</details>
 
+<details>
+<summary><strong>Linux Administration Lab</strong></summary>
 
 # Linux Administration Lab
 
@@ -329,6 +335,10 @@ Kali Linux served as the administrative and testing workstation throughout this 
 - Validated network connectivity
 - Performed network scanning 
 - Verified running services 
+</details>
+
+<details>
+<summary><strong>Troubleshooting & Validation</strong></summary>
 
 # Troubleshooting & Validation 
 
@@ -408,8 +418,10 @@ The Windows client successfully communicated with the Domain Controller, demonst
 ### Key Takeaway
 
 This validation process highlighted how closely Active Directory can depend on proper DNS configuration and reinforced the importance of testing enterprise infrastructure after deployment. 
+</details>
 
-------------------------------------------------------------------------
+<details>
+<summary><strong>Skills Demonstrated</strong></summary>
 
 # Skills Demonstrated
 
@@ -445,6 +457,10 @@ This validation process highlighted how closely Active Directory can depend on p
 - Network Reconnaissance
 - SSH Remote Administration 
 - Security Documentation 
+</details>
+
+<details>
+<summary><strong>Future Improvements</strong></summary>
 
 # Future Improvements
 
@@ -461,6 +477,10 @@ This validation process highlighted how closely Active Directory can depend on p
 - Perform vulnerability assessments using OpenVAS.
 - Configure centralized logging for Linux services.
 - Harden Apache2 using security best practices. 
+</details>
+
+<details>
+<summary><strong>Lessons Learned</strong></summary>
 
 # Lessons Learned
 
@@ -471,8 +491,10 @@ Throughout the Windows Lab, I was able to strengthen my understanding of how Act
 ## Professional Lessons
 
 This project reinforced the importance of following a structured troubleshooting methodology rather than relying on the trial and error method to make configuration changes. Throughout both environments, I learned the importance of verifying services, confirming network connectivity, validating system configuration, and isolating any potential causes before taking action. Developing clear documentation throughout this project has also demonstrated the importance of being able to communicate technical work in a professional and structured manner. 
- 
+</details>
 
+<details>
+<summary><strong>References</strong></summary>
 # References
 
 -   **Microsoft Learn: Active Directory**
@@ -487,4 +509,4 @@ https://ubuntu.com/server/docs/
 https://httpd.apache.org/docs/
 -   **Oracle VirtualBox Documentation**
 https://www.virtualbox.org/wiki/Documentation
-
+</details>
