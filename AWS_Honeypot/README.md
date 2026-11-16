@@ -45,13 +45,25 @@ A honeypot exposes decoy services that can record interactions such as connectio
 <details open>
 <summary><strong>Deployment & Configuration</strong></summary>
 
-## AWS and Ubuntu Server
+## 1. Provisioning the AWS EC2 Instance
 
-I provisioned an EC2 instance running Ubuntu Server and used SSH to administer it. The EC2 security group controlled inbound traffic. During validation, I checked management access separately from the ports used by the honeypot services.
+I started by creating an Amazon EC2 instance to host the honeypot. Available memory was a factor when choosing the instance and the T-Pot instance and the T-Pot installation profile. I used T-Pot Mini in order to run a smaller set of honeypot services on the resources that were available for the lab.
 
-## T-Pot Mini
+## 2. Configuring Network Access
 
-I installed T-Pot Mini on Ubuntu and inspected the Docker containers that supported the deployment. Cowrie and Mailoney provided decoy services, while Suricata supplied network alerts. The T-Pot web interface provided a place to review the events produced by those components.
+I used an EC2 security group to control which connections could reach the instance. This step involved three types of access: SSH for administering the host, browser access to the T-Pot dashboard, and inbound traffic to the decoy services. Being able to keep track of which port served each purpose helped me troubleshoot connectivity issues during and after the installation process. 
+
+I then connected from my Kali Linux virtual machine using SSH and the EC2 key pair. This gave me a remote shell on the instance to install T-Pot and check the host configuration. 
+
+## 3. Installing T-Pot Mini
+
+Once connected to the EC2 instance, I installed T-Pot Mini, T-Pot uses Docker to run the honeypots and supporting tools as containers. Cowrie helped provide a simulate remote login service, Mailoney provided an SMTP decoy, and Suricata generated alerts based on network traffic. 
+
+## Validating the Deployment 
+
+I tested SSH and the T-Pot web interface separately. When the dashboard returned a connection-refused error, I reviewed the EC2 inbound rules, checked whether the T-Pot service was active, and inspected the containers. I also used verbose SSH output and port checks to help narrow down connectivity issues. 
+
+After restoring access to the dashboard, I could use the web interface to review the honeypot activity. Since the honeypot ran on EC2, it could continue collecting events while my local machine was asleep, as long as the cloud instance and its services were running. 
 
 </details>
 
