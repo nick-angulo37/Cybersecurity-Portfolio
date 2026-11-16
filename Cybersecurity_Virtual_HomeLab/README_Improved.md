@@ -119,11 +119,10 @@ Virtual Machines:
 <details open>
 <summary><strong>Enterprise Windows Lab</strong></summary>
 
-# Enterprise Windows Lab
+## Environment Overview
 
 > **Initial Goal:** Build and administer a Windows enterprise environment using Microsoft's core infrastructure services.
 
-## Environment Overview
 
 The Enterprise Windows Lab was designed to simulate a small business environment using Windows Server 2022 and Windows 11. The primary objective of this virtual environment was to gain practical experience administering a Windows domain and becoming familiar with core Microsoft enterprise technologies.
 
@@ -132,7 +131,7 @@ Through this lab, I configured Active Directory Domain Services (AD DS), DHCP, D
 This environment provided hands-on experience with centralized authentication, user administration, and network services that are commonly found in enterprise Windows environments. 
 ## Domain Controller
 
-The first step in building the Windows environment was promoting the Windows Server to a Domain Controller and installing Active Directory Domain Services (AD DS).
+The first step in building the Windows environment was installing AD DS and promoting the server.
 
 A Domain Controller provides centralized authentication and authorization services for devices and users within a Windows domain. By configuring the server as the Domain Controller, it became responsible for managing user authentication, domain resources, and administrative policies through the environment.
 
@@ -194,7 +193,7 @@ Organizational Units simplify administration by allowing users, computers, and o
 
 ## Security Groups
 
-Security Groups were created to demonstrate role-based administration within Active Directory.Rather than assigning permissions directly to individual users, Security Groups allowed for permissions to be managed centrally by grouping users according to their responsibilities. This approach follows enterprise best practices as it helps in simplifying administration and improving scalability. 
+Security Groups were created within Active Directory to demonstrate centralized user management and establish a foundation for role-based access control. Rather than managing users individually, Security Groups allow administrators to organize accounts according to their responsibilities and assign permissions to groups when configuring access to resources. Throughout this list, I created a role-based Security Groups assigned users to the appropriate groups, and verified their memberships. This approach helped me understand how organizations can simplify user administration while supporting more scalable access management.
 
 ### Tasks Completed:
 
@@ -208,7 +207,7 @@ Security Groups were created to demonstrate role-based administration within Act
 
 ## DNS
 
-Active Directory depends heavily on DNS to locate domain resources and authenticate users.Part of this lab was to configure DNS in order to provide reliable name resolution throughout the Windows environment.
+Active Directory relies on DNS to locate Domain Controllers and other domain services within a Windows environment. Proper DNS configuration allows domain clients to discover the services that are required for authentication and communications with the Domain Controller. As part of this lab, DNS was configured to provide internal name resolution and support communication between the Windows Server and Windows 11 workstation. 
 
 ### Tasks Completed:
 
@@ -216,7 +215,7 @@ Active Directory depends heavily on DNS to locate domain resources and authentic
 - Verified Reverse Lookup Zones
 - Validated DNS name resolution
 
-**Note**: Future updates to this projects will include the screenshots of DNS configuration. 
+**Note**: Future updates to this project will include the screenshots of DNS configuration. 
 
 ## DHCP
 
@@ -235,7 +234,7 @@ DHCP was configured to automatically assign IP addresses and network configurati
 
 ## Windows Client Verification
 
-After configuring Active Directory, DNS, and DHCP, the Windows 11 workstation was validated to ensure successful communication with the Domain Controller. The client successfully obtained network configuration information and communicated with the server, confirming that the core Windows infrastructure services were functioning correctly. 
+After configuring Active Directory, DNS, and DHCP, I performed network validation tests on the Windows 11 workstation to verify communication with the Domain Controller. This included reviewing the client's IP configuration, confirming its configured DNS server, and testing network connectivity using the `ping` command. The successful connectivity test demonstrated that the Windows 11 workstation was able to communicate with the Domain Controller over the virtual network. These tests provide a foundation for further verification of the domain services configured throughout the lab.  
 
 ### Verifications Performed:
 
@@ -283,7 +282,7 @@ Ubuntu Server served as the primary Linux server for this lab environment. The s
 
 ## Apache2 Web Server
 
-Apache2 was installed to provide a simple web service that could be accessed from another virtual machine within the environment. Deploying a web server provided practical experience managing Linux services while creating a target for connectivity testing and network validation. This was one of the sections that brought that most issues through the process which I will go more into detail in another section. 
+Apache2 was installed to provide a simple web service that could be accessed from another virtual machine within the environment. Deploying a web server provided practical experience managing Linux services while creating a target for connectivity testing and network validation. This was one of the sections that presented the most challenges, which I will go more into detail in another section. 
 
 ### Tasks Completed:
 - Installed Apache2
@@ -316,7 +315,7 @@ After configuring the Ubuntu Server, connectivity testing was performed in order
 ### Validation Performed:
 
 - Verified IP configuration 
-- Tested connectivity using 'ping'
+- Tested connectivity using `ping`
 - Confirmed access to the Apache web server 
 - Verified SSH connectivity
 
@@ -342,7 +341,7 @@ Kali Linux served as the administrative and testing workstation throughout this 
 
 # Troubleshooting & Validation 
 
-Throughout both lab environments, I encountered many configuration challenges while also performing validation tests to confirm that services were functioning properly. Rather than relying on the trial and error, I followed a troubleshooting procedures by verifying system configuration, testing network connectivity, validating running services, and isolating potential causes before properly implementing a solution. The following case studies summarizes a few examples of the process. 
+Throughout both lab environments, I encountered many configuration challenges while also performing validation tests to confirm that services were functioning properly. Rather than relying on the trial and error, I followed a structured troubleshooting process by verifying system configuration, testing network connectivity, validating running services, and isolating potential causes before properly implementing a solution. The following case studies summarizes a few examples of the process. 
 
 ## Case Study 1 - Apache Web Server Connectivity 
 
@@ -360,7 +359,7 @@ To  identify the root cause of this connectivity issue, I performed the followin
 4. Reviewed the Ubuntu firewall (UFW) configuration.
 5. Verified that HTTP traffic on TCP port 80 was permitted.
 6. Restarted the Apache service after updating the firewall configuration.
-7. Restarted access from the Kali Linux workstation.
+7. Retested access from the Kali Linux workstation.
 
 ### Resolution 
 
@@ -405,15 +404,15 @@ This case study does not revolve around an issue that was encountered throughout
 
 I performed the following steps for validation:
 
-1. Verified the client's IP configuration.
-2. Confirmed the DNS server assignment.
-3. Verified that the client received a valid DHCP lease. 
-4. Tested communication with the Domain Controller using `ping`.
-5. Confirmed successful domain communication.
+1. Reviewed the Windows 11 client's IP configuration.
+2. Confirmed the configured DNS server address. 
+3. Verified that the client was using the expected network settings.
+4. Tested network connectivity with the Domain Controller using the `ping` command.
+5. Confirmed that the Windows 11 workstation could successfully communicate with the server over the virtual network. 
 
 ### Outcome
 
-The Windows client successfully communicated with the Domain Controller, demonstrating that Active Directory, DNS, and DHCP had been configured correctly. 
+The Windows 11 workstation successfully communicated with the Domain Controller during network connectivity testing. This confirmed that both virtual machine were able to communicate over the configured network. The validation process also reinforced the importance of reviewing IP addressing and DNS configuration when troubleshooting connectivity issues in a Windows domain environment.
 
 ### Key Takeaway
 
@@ -467,7 +466,7 @@ This validation process highlighted how closely Active Directory can depend on p
 ## Windows
 
 - Deploy additional Windows clients to simulate a larger enterprise environment. 
-- Implement Group Policy Objectives (GPOs) to enforce centralized security policies.
+- Implement Group Policy Objects (GPOs) to enforce centralized security policies.
 - Explore Active Directory delegation and advanced administrative roles.
 - Configure Windows Server Update Services (WSUS) for centralized update management.
 
@@ -495,7 +494,6 @@ This project reinforced the importance of following a structured troubleshooting
 
 <details>
 <summary><strong>References</strong></summary>
-# References
 
 -   **Microsoft Learn: Active Directory**
  https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview
