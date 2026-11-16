@@ -77,9 +77,9 @@ Virtual Machines:
 -   Deployed and configured Active Directory Domain Services (AD DS).
 -   Configured DNS for internal name resolution.
 -   Configured DHCP to automatically assign IP addresses to client systems.
--   Create Organizational Units (OUs) to organize domain resources.
--   Create and manage domain user accounts.
--   Configure Security Groups for role-based administration.
+-   Created Organizational Units (OUs) to organize domain resources.
+-   Created and managed domain user accounts.
+-   Configured security groups for role-based administration.
 
 ## Linux Administration Lab
 
@@ -193,7 +193,7 @@ Organizational Units simplify administration by allowing users, computers, and o
 
 ## Security Groups
 
-Security Groups were created within Active Directory to demonstrate centralized user management and establish a foundation for role-based access control. Rather than managing users individually, Security Groups allow administrators to organize accounts according to their responsibilities and assign permissions to groups when configuring access to resources. Throughout this list, I created a role-based Security Groups assigned users to the appropriate groups, and verified their memberships. This approach helped me understand how organizations can simplify user administration while supporting more scalable access management.
+Security Groups were created within Active Directory to demonstrate centralized user management and establish a foundation for role-based access control. Rather than managing users individually, Security Groups allow administrators to organize accounts according to their responsibilities and assign permissions to groups when configuring access to resources. Throughout this lab, I created role-based security groups, assigned users to the appropriate groups, and verified their memberships. This approach helped me understand how organizations can simplify user administration while supporting more scalable access management.
 
 ### Tasks Completed:
 
@@ -255,8 +255,6 @@ After configuring Active Directory, DNS, and DHCP, I performed network validatio
 <details>
 <summary><strong>Linux Administration Lab</strong></summary>
 
-# Linux Administration Lab
-
 ## Environment Overview
 
 The Linux Administration Lab was developed independently from the Windows environment to strengthen practical Linux administration skills and gain hands-on experience managing common server services. This environment consisted of an Ubuntu Server that served as a primary web server and a Kali Linux workstation used for administration, connectivity testing, and basic network reconnaissance. 
@@ -282,7 +280,7 @@ Ubuntu Server served as the primary Linux server for this lab environment. The s
 
 ## Apache2 Web Server
 
-Apache2 was installed to provide a simple web service that could be accessed from another virtual machine within the environment. Deploying a web server provided practical experience managing Linux services while creating a target for connectivity testing and network validation. This was one of the sections that presented the most challenges, which I will go more into detail in another section. 
+Configuring the Apache2 web server presented several challenges, particularly when troubleshooting connectivity between the Ubuntu Server and Kali Linux workstation. These issues and the troubleshooting steps taken to resolve them are discussed in greater detail in the Troubleshooting & Validation section.
 
 ### Tasks Completed:
 - Installed Apache2
@@ -339,9 +337,7 @@ Kali Linux served as the administrative and testing workstation throughout this 
 <details>
 <summary><strong>Troubleshooting & Validation</strong></summary>
 
-# Troubleshooting & Validation 
-
-Throughout both lab environments, I encountered many configuration challenges while also performing validation tests to confirm that services were functioning properly. Rather than relying on the trial and error, I followed a structured troubleshooting process by verifying system configuration, testing network connectivity, validating running services, and isolating potential causes before properly implementing a solution. The following case studies summarizes a few examples of the process. 
+Throughout both lab environments, I encountered several configuration challenges while performing validation tests to confirm that services were functioning properly. Rather than relying on trial and error, I followed a structured troubleshooting process by verifying system configurations, testing network connectivity, validating running services, and isolating potential causes before implementing solutions. The following case studies summarize examples of the troubleshooting and validation processes used throughout the project.
 
 ## Case Study 1 - Apache Web Server Connectivity 
 
@@ -357,8 +353,8 @@ To  identify the root cause of this connectivity issue, I performed the followin
 2. Verified that the Apache service was running using `systemctl status apache2` command.
 3. Confirmed basic network connectivity between Ubuntu Server and Kali Linux using `ping` command.
 4. Reviewed the Ubuntu firewall (UFW) configuration.
-5. Verified that HTTP traffic on TCP port 80 was permitted.
-6. Restarted the Apache service after updating the firewall configuration.
+5. Identified that HTTP traffic on TCP port 80 was not permitted by the current UFW firewall configuration.
+6. Updated the UFW firewall configuration to allow HTTP traffic on TCP port 80.
 7. Retested access from the Kali Linux workstation.
 
 ### Resolution 
@@ -412,7 +408,7 @@ I performed the following steps for validation:
 
 ### Outcome
 
-The Windows 11 workstation successfully communicated with the Domain Controller during network connectivity testing. This confirmed that both virtual machine were able to communicate over the configured network. The validation process also reinforced the importance of reviewing IP addressing and DNS configuration when troubleshooting connectivity issues in a Windows domain environment.
+The Windows 11 workstation successfully communicated with the Domain Controller during network connectivity testing. This confirmed that both virtual machines were able to communicate over the configured network. The validation process also reinforced the importance of reviewing IP addressing and DNS configuration when troubleshooting connectivity issues in a Windows domain environment.
 
 ### Key Takeaway
 
@@ -421,8 +417,6 @@ This validation process highlighted how closely Active Directory can depend on p
 
 <details>
 <summary><strong>Skills Demonstrated</strong></summary>
-
-# Skills Demonstrated
 
 ## Enterprise Administration
 
@@ -461,8 +455,6 @@ This validation process highlighted how closely Active Directory can depend on p
 <details>
 <summary><strong>Future Improvements</strong></summary>
 
-# Future Improvements
-
 ## Windows
 
 - Deploy additional Windows clients to simulate a larger enterprise environment. 
@@ -480,8 +472,6 @@ This validation process highlighted how closely Active Directory can depend on p
 
 <details>
 <summary><strong>Lessons Learned</strong></summary>
-
-# Lessons Learned
 
 ## Technical Lessons
 
