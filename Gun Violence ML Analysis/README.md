@@ -119,6 +119,7 @@ A majority-class baseline classifier was also introduced to determine whether th
 <p align="center">
   <em>Decision Tree Classification Model</em>
 </p>
+
 ### Part 3. K-Nearest Neighbors (KNN)
 
 KNN was implemented to classify recorded incidents into geographic regions using their latitude and longitude. The algorithm compares a new data point with nearby examples in the training dataset and assigns the most common class among its nearest neighbors. 
