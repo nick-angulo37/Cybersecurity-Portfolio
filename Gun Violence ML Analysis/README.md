@@ -120,4 +120,32 @@ KNN and SVM were evaluated on their ability to classify geographic regions based
 
 ## 7. Challenges and limitations 
 
-Throughout this project, several challenges were identified 
+Throughout this project, several challenges were identified:
+
+**1. Dataset Size** - The dataset contains 427 recorded incidents, limiting the amount of information that is available for training and evaluating the models. 
+
+**2. Feature Selection** - Identifying useful predictors was challenging as the dataset primarily contains geographic information and incident outcomes.
+
+**3. Model Overfitting and Data Leakage** - The original decision tree experiment produced unusually high accuracy when predicting regional categories. The classification task was subsequently revised in order to reduce reliance on labels that were derived from the same data. 
+
+**4. Geographic Classification** - KNN and SVM achieved high accuracy when classifying regions based on coordinates. However, these results primarily demonstrates geographic classification rather than the predication of violent crimes. 
+
+**5. Dataset Coverage** - The dataset represents a specific collection of recorded incidents and should not be interpreted as a complete representation of all gun violence in the United States. 
+
+## Future Improvements 
+
+There are several improvements that can be made to expand the scope and reliability of the project:
+
+- **Expand the dataset** - Incorporate additional years of incident records to improve geographic and temporal coverage.
+- **Introduce additional features** - Explore socioeconomic indicators, demographic information, and other independently sourced contextual variables.
+- **Improve model validation** - Implement cross-validation and parameter tuning to assess model stability.
+- **Explore additional algorithms** - Compare other classification approaches using appropriate evaluation methods.
+- **Improve geographic analysis** - Consider population-adjusted incidents rates rather than soley relying on raw incident counts.
+
+## Conclusion
+
+This project provided an opportunity to apply data mining and supervised machine learning techniques to a real-world dataset involving gun violence incidents in the United States. Through exploratory data analysis, we examined differences in recorded incidents and victim totals across states and regions. We then implemented Decision Tree, HNN, and SVM classifiers to invcestifate two classification tasks: incident fatality classification and geographic region classificaition. 
+
+These results highlighted both capabilities and limitations of machine learning. While KNN and SVM demonstrated strong performance in classifying geographic regions, the decision tree experiment emphasized the importance of meaningful feature selection, baseline comparisons, and careful evaluations. 
+
+Overall, this project strengthened our understanding of Python-based data analysis, preprocessing, supervised learning, model evaluation, and the interpretation of machine learning results. 
