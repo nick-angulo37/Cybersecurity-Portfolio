@@ -77,6 +77,10 @@ Using Pandas and Matplotlib, we created visualizations showing:
 
 These visualizations provided an overview of the geographic distributioon of the dataset and helped identify differences in recorded incidents counts and victim totals.
 
+![Victims by State](images/victims_states.png)
+
+*Figure 1: Distribution of recorded victims across U.S. states.*
+
 ### Part 2. Decision Tree Classification
 
 The Decision Tree classifier was implemented to explore whether geographic coordinates could be used to distinguish between fatal and nonfatal incidents.
@@ -92,6 +96,13 @@ The decision tree was configured with limits on tree depth and minimum leaf size
 
 A majority-class baseline classifier was also introduced to determine whether the decision tree performed better than simply predicting the most common incident category. This experiment was designed to assess the predictive information available from geographic coordinates alone, rather than establish a reliable method for forecasting datal incidents. 
 
+<p align="center">
+  <img src="images/Decision Tree.png" width="800">
+</p>
+
+<p align="center">
+  <em>Decision Tree Classification Model</em>
+</p>
 ### Part 3. K-Nearest Neighbors (KNN)
 
 KNN was implemented to classify recorded incidents into geographic regions using their latitude and longitude. The algorithm compares a new data point with nearby examples in the training dataset and assigns the most common class among its nearest neighbors. 
@@ -103,6 +114,15 @@ For this project, KNN was configured to use five nearest neighbors. Feature scal
 SVM was implemented as another geographic classification algorithm. The model uses a linear kernel to identify decision boundaries separating the geographic regions represented in the dataset. 
 
 Similar to KNN, the KVM model uses latitude and longitude as input features and was trained using standardized data. The purpose of implementing both algorithms was to compare their classification performance on the same geographic dataset. 
+
+<p align="center">
+  <img src="images/KNN_Matrix.png" width="48%">
+  <img src="images/SVM_Matrix.png" width="48%">
+</p>
+
+<p align="center">
+  <em>KNN (left) and SVM (right) model evaluation.</em>
+</p>
 
 ## 6. Model Evaluation and Results 
 
