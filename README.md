@@ -60,6 +60,7 @@ This portfolio is an ongoing project that will continue to expand as I develop n
 ## Contact
 
 **GitHub** - nick-angulo37
+
 **Email** - nicolasangulo759@gmail.com
 
 Thank you for taking the time to explore my portfolio!
